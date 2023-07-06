@@ -21,7 +21,7 @@ $(document).ready(function() {
                     var images = response.images;
                     var botMessage = `
                         <div class="message bot-message">
-                            <div class="message-text">${botAnswer}</div>
+                            <div class="message-text animated">${botAnswer}</div>
                     `;
 
                     if (images && images.length > 0) {
@@ -38,6 +38,7 @@ $(document).ready(function() {
 
                     $('#message-container').append(botMessage);
                     scrollToBottom();
+                    animateChatMessage();
                 },
                 error: function(error) {
                     console.log(error);
@@ -56,5 +57,13 @@ $(document).ready(function() {
 
     function scrollToBottom() {
         $('#message-container').scrollTop($('#message-container')[0].scrollHeight);
+    }
+
+    function animateChatMessage() {
+        var messageText = $('.message-text.animated:last');
+        messageText.addClass('fadeIn');
+        messageText.one('animationend', function() {
+            messageText.removeClass('animated fadeIn');
+        });
     }
 });
