@@ -3,6 +3,9 @@ body {
     margin: 0;
     padding: 20px;
     box-sizing: border-box;
+    background-image: url("https://thumbs.gfycat.com/AmpleHorribleDalmatian-max-1mb.gif");
+    background-size: cover;
+    background-position: center;
 }
 
 /* Light Mode Styles */
