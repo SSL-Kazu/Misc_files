@@ -186,3 +186,28 @@ h1 {
     }
 }
 
+/* Add a media query for smaller screens */
+@media (max-width: 600px) {
+    #chat-container {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    #chat-form {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    #chat-input {
+        flex: 1;
+        margin-right: 10px;
+    }
+
+    #send-button {
+        flex: none;
+        width: auto;
+        margin-right: 0;
+    }
+}
+
+
