@@ -3961,3 +3961,39 @@ input, select, textarea {
      background-color: #e1f5fe;
      max-width: 70%;
    }
+
+<!-- Anim -->
+/* User message animation */
+.chat-message.user {
+	animation: fadeInRight 0.5s ease forwards;
+}
+
+/* Bard message animation */
+.chat-message.bot {
+	animation: fadeInLeft 0.5s ease forwards;
+}
+
+/* Define the fadeInRight animation */
+@keyframes fadeInRight {
+	from {
+		opacity: 0;
+		transform: translateX(100%);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+/* Define the fadeInLeft animation */
+@keyframes fadeInLeft {
+	from {
+		opacity: 0;
+		transform: translateX(-100%);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
