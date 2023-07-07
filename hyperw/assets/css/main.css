@@ -1850,6 +1850,7 @@ input, select, textarea {
 		text-decoration: none;
 		text-transform: uppercase;
 		white-space: nowrap;
+		margin-top: 17px;
 	}
 
 		input[type="submit"]:after,
@@ -3911,7 +3912,7 @@ input, select, textarea {
 		/* Prompt */
    #chat-container {
      border: 2px solid #ccc;
-     border-radius: 15px;
+     border-radius: 20px;
      padding: 10px;
      max-height: 540px;
      overflow-y: auto;
@@ -3934,7 +3935,7 @@ input, select, textarea {
 
    #chat-input {
      flex: 1;
-     border-radius: 10px;
+     border-radius: 20px;
      padding: 5px;
      border: 1px solid #ccc;
      margin-right: 5px;
@@ -3948,7 +3949,7 @@ input, select, textarea {
      border: none;
      cursor: pointer;
      min-width: 70px; /* Adjust the width as needed */
-     margin-bottom 6px;
+     margin-bottom 12px;
    }
 
    .user {
