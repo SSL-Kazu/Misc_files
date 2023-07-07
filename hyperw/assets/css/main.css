@@ -3913,7 +3913,7 @@ input, select, textarea {
      border: 2px solid #ccc;
      border-radius: 10px;
      padding: 10px;
-     max-height: 900px;
+     max-height: 1200px;
      overflow-y: auto;
    }
 
