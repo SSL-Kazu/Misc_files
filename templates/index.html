@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Bard Web</title>
+  <meta name="description" content="#">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap core CSS -->
+  <link href="dist/css/lib/bootstrap.min.css" type="text/css" rel="stylesheet">
+  <!-- Swipe core CSS -->
+  <link href="dist/css/swipe.min.css" type="text/css" rel="stylesheet">
+  <!-- Favicon -->
+  <link href="dist/img/favicon.png" type="image/png" rel="icon">
+</head>
+
+<body>
+  <main>
+    <div class="layout">
+      <!-- Start of Navigation -->
+      <div class="navigation">
+        <div class="container">
+          <div class="inside">
+            <div class="nav nav-tab menu">
+              <button class="btn"><img class="avatar-xl" src="dist/img/avatars/user.png" alt="avatar"></button>
+              <a href="#discussions" data-toggle="tab" class="active"><i class="material-icons active">chat_bubble_outline</i></a>
+              <a href="#settings" data-toggle="tab"><i class="material-icons">settings</i></a>
+              <button class="btn power" onclick="visitPage();"><i class="material-icons">power_settings_new</i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End of Navigation -->
+      <!-- Start of Sidebar -->
+      <div class="sidebar" id="sidebar">
+        <div class="container">
+          <div class="col-md-12">
+            <div class="tab-content">
+              <!-- Start of Discussions -->
+              <div id="discussions" class="tab-pane fade active show">
+                <div class="search">
+                  <form class="form-inline position-relative">
+                    <input type="search" class="form-control" id="conversations" placeholder="Search for conversations...">
+                    <button type="button" class="btn btn-link loop"><i class="material-icons">search</i></button>
+                  </form>
+                  <button class="btn create" data-toggle="modal" data-target="#startnewchat"><i class="material-icons">create</i></button>
+                </div>
+                <div class="discussions">
+                  <h1>Chats</h1>
+                  <div class="list-group" id="chats" role="tablist">
+                    <a href="#list-chat" class="filterDiscussions all unread single active" id="list-chat-list" data-toggle="list" role="tab">
+                      <img class="avatar-md" src="dist/img/avatars/bard.png" data-toggle="tooltip" data-placement="top" title="Janette" alt="avatar">
+                      <div class="status">
+                        <i class="material-icons online">fiber_manual_record</i>
+                      </div>
+                      <div class="new bg-yellow">
+                        <span>X</span>
+                      </div>
+                      <div class="data">
+                        <h5>Bard</h5>
+                        <span>Online</span>
+                        <p>Bard AI</p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- End of Discussions -->
+              <!-- Start of Settings -->
+              <div class="tab-pane fade" id="settings">
+                <div class="settings">
+                  <div class="profile">
+                    <img class="avatar-xl" src="dist/img/avatars/user.png" alt="avatar">
+                    <h1><a href="#">User: </a></h1>
+                    <span>Location: Unknown</span>
+                  </div>
+                  <div class="categories" id="accordionSettings">
+                    <h1>Settings</h1>
+                  </div>
+                </div>
+              </div>
+              <!-- End of Settings -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End of Sidebar -->
+      <div class="main">
+        <div class="tab-content" id="nav-tabContent">
+          <!-- Start of Babble -->
+          <div class="babble tab-pane fade active show" id="list-chat" role="tabpanel" aria-labelledby="list-chat-list">
+            <!-- Start of Chat -->
+             <div class="chat" id="chat1">
+               <div class="top">
+                 <div class="container">
+                   <div class="col-md-12">
+                     <div class="inside">
+                       <a href="#"><img class="avatar-md" src="dist/img/avatars/bard.png" data-toggle="tooltip" data-placement="top" title="Bard" alt="avatar"></a>
+                       <div class="status">
+                         <i class="material-icons online">fiber_manual_record</i>
+                       </div>
+                       <div class="data">
+                         <h5><a href="#">Bard</a></h5>
+                         <span>Active now</span>
+                       </div>
+                       <button class="btn d-md-block d-none"><i class="material-icons md-30">info</i></button>
+                       <div class="dropdown">
+                         <button class="btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="material-icons md-30">more_vert</i></button>
+                         <div class="dropdown-menu dropdown-menu-right">
+                           <hr>
+                           <button class="dropdown-item"><i class="material-icons">clear</i>Clear History</button>
+                         </div>
+                       </div>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+               <div class="content" id="chat-content"> <!-- Corrected the ID to 'chat-content' -->
+                 <div class="container">
+                   <div class="col-md-12">
+                     <div class="date">
+                       <hr>
+                       <span>Now</span>
+                       <hr>
+                     </div>
+                     <div class="message">
+                       <!--we can use this for chat animation, you can set this animation while waiting for bard to answer-->
+                       <!--
+                       <img class="avatar-md" src="dist/img/avatars/bard.png" data-toggle="tooltip" data-placement="top" title="Bard" alt="avatar">
+                       <div class="text-main">
+                         <div class="text-group">
+                           <div class="text typing">
+                             <div class="wave">
+                               <span class="dot"></span>
+                               <span class="dot"></span>
+                               <span class="dot"></span>
+                             </div>
+                           </div>
+                         </div>
+                       </div>
+                       -->
+                     </div>
+                   </div>
+                 </div>
+               </div>
+               <div class="container">
+                 <div class="col-md-12">
+                   <div class="bottom">
+                     <form class="position-relative w-100" onsubmit="sendChat(event)">
+                       <textarea id="chat-input" class="form-control" placeholder="Start typing..." rows="1"></textarea>
+                       <button class="btn emoticons"><i class="material-icons">insert_emoticon</i></button>
+                       <button type="submit" class="btn send"><i class="material-icons">send</i></button>
+                     </form>
+                   </div>
+                 </div>
+               </div>
+             </div>
+
+             <script>
+               function sendChat(event) {
+                 event.preventDefault();
+                 var input = document.getElementById('chat-input');
+                 var message = input.value.trim();
+                 input.value = '';
+
+                 if (message === '') {
+                   return;
+                 }
+
+                 var xhr = new XMLHttpRequest();
+                 xhr.open('POST', '/get_answer', true);
+                 xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                 xhr.onreadystatechange = function() {
+                   if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                     var response = JSON.parse(xhr.responseText);
+                     handleResponse(response);
+                   }
+                 };
+                 xhr.send('prompt=' + encodeURIComponent(message));
+               }
+
+               function handleResponse(response) {
+                 var chatContent = document.getElementById('chat-content');
+                 var message = document.createElement('div');
+                 message.className = 'message';
+
+                 var textMain = document.createElement('div');
+                 textMain.className = 'text-main';
+
+                 var textGroup = document.createElement('div');
+                 textGroup.className = 'text-group';
+
+                 var text = document.createElement('div');
+                 text.className = 'text';
+                 text.innerHTML = '<p>' + response.answer + '</p>';
+
+                 textGroup.appendChild(text);
+                 textMain.appendChild(textGroup);
+
+                 var time = document.createElement('span');
+                 time.innerHTML = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                 textMain.appendChild(time);
+
+                 message.appendChild(textMain);
+                 chatContent.appendChild(message);
+
+                 scrollToBottom(chatContent);
+               }
+
+               function scrollToBottom(el) {
+                 el.scrollTop = el.scrollHeight;
+               }
+               scrollToBottom(document.getElementById('chat-content'));
+             </script>
+            </div>
+          </div>
+          <!-- End of Chat -->
+        </div>
+      </div>
+    </div> <!-- Layout -->
+  </main>
+  <!-- Bootstrap/Swipe core JavaScript -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="dist/js/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script>
+    window.jQuery || document.write('<script src="dist/js/vendor/jquery-slim.min.js"><\/script>')
+  </script>
+  <script src="dist/js/vendor/popper.min.js"></script>
+  <script src="dist/js/swipe.min.js"></script>
+  <script src="dist/js/bootstrap.min.js"></script>
+  <script>
+    function scrollToBottom(el) {
+      el.scrollTop = el.scrollHeight;
+    }
+    scrollToBottom(document.getElementById('content'));
+  </script>
+</body>
+
+</html>
